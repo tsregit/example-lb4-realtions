@@ -1,6 +1,6 @@
 import { DefaultCrudRepository } from '@loopback/repository';
 import { TipoDeuda, TipoDeudaRelations } from '../models';
-import { MongoDataSource } from '../datasources';
+import { MysqlDataSource } from '../datasources';
 import { inject } from '@loopback/core';
 
 export class TipoDeudaRepository extends DefaultCrudRepository<
@@ -10,7 +10,7 @@ export class TipoDeudaRepository extends DefaultCrudRepository<
   > {
 
   constructor(
-    @inject('datasources.mongo') dataSource: MongoDataSource,
+    @inject('datasources.mysql') dataSource: MysqlDataSource,
   ) {
     super(TipoDeuda, dataSource);
   }

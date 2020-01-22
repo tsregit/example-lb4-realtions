@@ -10,7 +10,7 @@ import {
   Deuda,
   Dueno,
 } from '../models';
-import {DeudaRepository} from '../repositories';
+import { DeudaRepository } from '../repositories';
 
 export class DeudaDuenoController {
   constructor(
@@ -24,7 +24,7 @@ export class DeudaDuenoController {
         description: 'Dueno belonging to Deuda',
         content: {
           'application/json': {
-            schema: {type: 'array', items: getModelSchemaRef(Dueno)},
+            schema: { type: 'array', items: getModelSchemaRef(Dueno) },
           },
         },
       },
