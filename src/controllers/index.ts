@@ -10,3 +10,7 @@ export * from './deuda-dueno.controller';
 export * from './deuda-pago.controller';
 export * from './mensaje.controller';
 export * from './visita.controller';
+export * from './visita-dueno-dueno.controller';
+export * from './visita-dueno-visita.controller';
+export * from './visita-dueno-mensaje.controller';
+export * from './visita-dueno.controller';

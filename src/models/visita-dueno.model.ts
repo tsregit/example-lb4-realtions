@@ -1,6 +1,9 @@
-import { Entity, model, property } from '@loopback/repository';
+import { Entity, model, property, belongsTo } from '@loopback/repository';
+import { Dueno } from './dueno.model';
+import { Visita } from './visita.model';
+import {Mensaje} from './mensaje.model';
 
-@model({ settings: { strict: false } })
+@model({settings: {strict: false}})
 export class VisitaDueno extends Entity {
   @property({
     type: 'string',
@@ -21,6 +24,14 @@ export class VisitaDueno extends Entity {
   })
   estadoNotificacion: boolean;
 
+  @belongsTo(() => Dueno)
+  duenoId: string;
+
+  @belongsTo(() => Visita)
+  visitaId: string;
+
+  @belongsTo(() => Mensaje)
+  mensajeId: string;
   // Define well-known properties here
 
   // Indexer property to allow additional data
