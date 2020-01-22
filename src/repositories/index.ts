@@ -6,3 +6,4 @@ export * from './user.repository';
 export * from './dueno.repository';
 export * from './mensaje.repository';
 export * from './visita.repository';
+export * from './visita-dueno.repository';
