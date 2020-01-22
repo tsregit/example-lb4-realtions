@@ -82,10 +82,11 @@ export class DeudaController {
   async find(
     @param.query.object('filter', getFilterSchemaFor(Deuda)) filter?: Filter<Deuda>,
   ): Promise<Deuda[]> {
-    if (filter) {
-      filter.include = [{ relation: 'tipoDeuda' }];
-    }
-    return this.deudaRepository.find(filter);
+    const deudasEcontradas = await this.deudaRepository.find(filter);
+    return deudasEcontradas.map(deudas => {
+      if (deudas.tipoDeudaId) delete deudas.tipoDeudaId;
+      return deudas;
+    });
   }
 
   @patch('/deudas', {
